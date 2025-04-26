@@ -6,6 +6,7 @@
 package com.lymytz.entitie.base.user;
 
 import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.utils.TypeRessource;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,5 +44,8 @@ public class Ressources extends BaseEntity implements Serializable {
     private String libelle;
     @Column(name = "description")
     private String description;
+    private Long parent;
+    private String type = TypeRessource.MODULE.name();
+
 
 }

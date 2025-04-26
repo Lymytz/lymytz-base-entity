@@ -41,7 +41,7 @@ public class AutorisationRessources implements Serializable {
     private Boolean acces;
     @JoinColumn(name = "ressource_page", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Ressources ressourcePage;
+    private Ressources ressources;
     @JoinColumn(name = "niveau_acces", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private NiveauAcces niveauAcces;

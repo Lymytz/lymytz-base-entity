@@ -1,0 +1,11 @@
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: Lymytz/ci-config/.github/workflows/build.yml@main

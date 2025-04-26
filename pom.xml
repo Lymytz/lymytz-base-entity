@@ -6,7 +6,7 @@
 
     <groupId>com.lymytz</groupId>
     <artifactId>lymytz-base-entity</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -51,6 +51,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/Lymytz/lymytz-base-entity</url>
+        </repository>
+    </distributionManagement>
 
 </project>

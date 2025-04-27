@@ -45,7 +45,7 @@ public class Ressources extends BaseEntity implements Serializable {
     @Column(name = "description")
     private String description;
     private Long parent;
-    private String type = TypeRessource.MODULE.name();
+    private String type ;
 
 
 }

@@ -23,7 +23,7 @@ public class Dictionnaire extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yvs_dictionnaire_id_seq")
     @SequenceGenerator(sequenceName = "yvs_dictionnaire_id_seq", allocationSize = 1, name = "yvs_dictionnaire_id_seq")
-    @Column(name = "id", columnDefinition = "BIGSERIAL")
+    @Column(name = "id")
     private Long id;
     @Column(name = "libele")
     private String libele;  //Nom du pays ou de la ville

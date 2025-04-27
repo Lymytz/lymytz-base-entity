@@ -39,7 +39,7 @@ public class NatureCompte extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yvs_nature_compte_id_seq")
     @SequenceGenerator(sequenceName = "yvs_nature_compte_id_seq", allocationSize = 1, name = "yvs_nature_compte_id_seq")
-    @Column(name = "id", columnDefinition = "BIGSERIAL")
+    @Column(name = "id")
     private Long id;
     @Column(name = "designation")
     private String designation;

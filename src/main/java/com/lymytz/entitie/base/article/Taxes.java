@@ -37,7 +37,7 @@ public class Taxes extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_taxes_id_seq", name = "yvs_taxes_id_seq_name")
+    @SequenceGenerator(sequenceName = "yvs_taxes_id_seq", name = "yvs_taxes_id_seq_name", allocationSize = 1)
     @GeneratedValue(generator = "yvs_taxes_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;

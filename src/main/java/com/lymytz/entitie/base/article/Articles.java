@@ -34,7 +34,7 @@ public class Articles extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_articles_id_seq", name = "yvs_articles_id_seq_name")
+    @SequenceGenerator(sequenceName = "yvs_articles_id_seq", name = "yvs_articles_id_seq_name",allocationSize = 1)
     @GeneratedValue(generator = "yvs_articles_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;

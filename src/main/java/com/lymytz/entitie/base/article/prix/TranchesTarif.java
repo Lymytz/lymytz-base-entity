@@ -33,7 +33,7 @@ public class TranchesTarif extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id", columnDefinition = "SERIAL")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yvs_tranches_id_seq")
     @SequenceGenerator(sequenceName = "yvs_tranches_id_seq", allocationSize = 1, name = "yvs_tranches_id_seq")
     private Integer id;

@@ -35,7 +35,7 @@ public class BorneTranches extends BaseEntity implements Serializable, Comparato
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id", columnDefinition = "BIGSERIAL")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yvs_borne_tranches_id_seq")
     @SequenceGenerator(sequenceName = "yvs_borne_tranches_id_seq", allocationSize = 1, name = "yvs_borne_tranches_id_seq")
     private Long id;

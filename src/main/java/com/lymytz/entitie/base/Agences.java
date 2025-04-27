@@ -30,7 +30,7 @@ public class Agences extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id", columnDefinition = "BIGSERIAL")
+    @Column(name = "id")
     @SequenceGenerator(sequenceName = "yvs_agences_id_seq", name = "yvs_agences_id_seq_name", allocationSize = 1)
     @GeneratedValue(generator = "yvs_agences_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -54,7 +54,7 @@ public class Agences extends BaseEntity implements Serializable {
     @JoinColumn(name = "societe", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Societe societe;
-    @JoinColumn(name = "chef_agence", referencedColumnName = "id")
+    @JoinColumn(name = "ville", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Dictionnaire ville;
 

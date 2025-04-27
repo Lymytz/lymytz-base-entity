@@ -25,7 +25,7 @@ public class Societe extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id", columnDefinition = "SERIAL")
+    @Column(name = "id")
     @SequenceGenerator(sequenceName = "yvs_societes_id_seq", name = "yvs_societes_id_seq_name", allocationSize = 1)
     @GeneratedValue(generator = "yvs_societes_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;

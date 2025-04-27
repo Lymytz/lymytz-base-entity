@@ -87,8 +87,7 @@ public class Caisses extends BaseEntity implements Serializable {
     private List<ComptesCaisse> othersCompte;
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Caisses> subCaisses;
-
-    @OneToMany(mappedBy = "idCaisse", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "caisse", fetch = FetchType.LAZY)
     private List<CaisseUser> yvsBaseCaisseUserList;
 
 }

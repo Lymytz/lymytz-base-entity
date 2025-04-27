@@ -75,6 +75,7 @@ public class Societe extends BaseEntity implements Serializable {
     private Boolean gestva;
     @Column(name = "cachet")
     private String cachet;
+    private String realmName;
     @JoinColumn(name = "ville", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Dictionnaire ville;

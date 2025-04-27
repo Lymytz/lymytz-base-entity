@@ -6,7 +6,7 @@
 
     <groupId>com.lymytz</groupId>
     <artifactId>lymytz-base-entity</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

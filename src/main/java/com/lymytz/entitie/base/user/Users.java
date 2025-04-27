@@ -66,6 +66,7 @@ public class Users extends BaseEntity implements Serializable {
     private Boolean connecte = false;
     @Column(name = "nom_users")
     private String nomUsers;
+    private String keycloackId;
     @Column(name = "super_admin")
     private Boolean superAdmin = false;
 

@@ -9,3 +9,6 @@
 ### Ajouts
 - Ajout de l'entité TypeDeCout
 - Ajout de l'entité LiasonDepot
+- Ajout de l'entité WorkflowAutorisationValidDoc
+- Ajout de l'entité WorkflowEtapeValidation
+- Ajout de l'entité WorkflowModelDoc

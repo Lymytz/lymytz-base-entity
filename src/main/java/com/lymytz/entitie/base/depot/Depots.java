@@ -5,8 +5,8 @@
  */
 package com.lymytz.entitie.base.depot;
 
-import com.lymytz.entitie.base.Agences;
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.base.AgencesEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.CodeAcces;
 import com.lymytz.entitie.base.article.com.PointDeVenteDepot;
 import jakarta.persistence.Column;
@@ -94,7 +94,7 @@ public class Depots extends BaseEntity implements Serializable {
 
     @JoinColumn(name = "agence", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Agences agence;
+    private AgencesEntity agence;
     @JoinColumn(name = "code_acces", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private CodeAcces codeAcces;

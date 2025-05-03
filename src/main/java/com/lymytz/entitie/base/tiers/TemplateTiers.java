@@ -5,8 +5,8 @@
  */
 package com.lymytz.entitie.base.tiers;
 
-import com.lymytz.entitie.base.Agences;
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.base.AgencesEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.Dictionnaire;
 import com.lymytz.entitie.base.compta.CategorieComptable;
 import com.lymytz.entitie.base.compta.ModeDeReglement;
@@ -92,7 +92,7 @@ public class TemplateTiers extends BaseEntity implements Serializable {
     private ModeDeReglement modeDeReglement;
     @JoinColumn(name = "agence", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Agences agence;
+    private AgencesEntity agence;
     @JoinColumn(name = "ristourne", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private PlanDeRistourne ristourne;

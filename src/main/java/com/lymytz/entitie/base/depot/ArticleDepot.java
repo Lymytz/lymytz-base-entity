@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.depot;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.article.Articles;
 import com.lymytz.entitie.base.article.ConditionnementArticle;
 import jakarta.persistence.Column;

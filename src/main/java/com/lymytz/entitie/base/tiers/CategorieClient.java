@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.tiers;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.Societe;
 import com.lymytz.entitie.base.compta.ModelDeReglement;
 import jakarta.persistence.Column;

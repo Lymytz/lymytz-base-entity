@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.tiers.client;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.article.ConditionnementArticle;
 import com.lymytz.entitie.base.article.FamilleArticle;
 import jakarta.persistence.Column;

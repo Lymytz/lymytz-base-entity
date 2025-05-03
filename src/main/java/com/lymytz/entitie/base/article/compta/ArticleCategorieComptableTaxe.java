@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.article.compta;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.article.Taxes;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,5 +1,6 @@
 package com.lymytz.entitie.base;
 
+import com.lymytz.entitie.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

@@ -5,8 +5,8 @@
  */
 package com.lymytz.entitie.base.user;
 
-import com.lymytz.entitie.base.Agences;
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.base.AgencesEntity;
+import com.lymytz.entitie.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -72,7 +72,7 @@ public class Users extends BaseEntity implements Serializable {
 
     @JoinColumn(name = "agence", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Agences agence;
+    private AgencesEntity agence;
     @JoinColumn(name = "author", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private UsersAgence author;

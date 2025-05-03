@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.tiers;
+
+package com.lymytz.entitie.base.tiers.fournisseur;
 
 import com.lymytz.entitie.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,29 +19,27 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * @author hp Elite 8300
+ *
+ * @author Lymytz Dowes
  */
 @Entity
-@Table(name = "yvs_ext_tiers")
+@Table(name = "yvs_ext_fournisseur")
 @Getter
 @Setter
-public class ExtTiers extends BaseEntity implements Serializable {
-
-    @Serial
+public class ExtFournisseur extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_ext_tiers_id_seq", name = "yvs_ext_tiers_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_ext_tiers_id_seq_name", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "yvs_ext_fournisseur_id_seq", name = "yvs_ext_fournisseur_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_ext_fournisseur_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
     @Column(name = "code_externe")
     private String codeExterne;
-    @JoinColumn(name = "tiers", referencedColumnName = "id")
-    @OneToOne(fetch = FetchType.LAZY)
-    private Tiers tiers;
+    @JoinColumn(name = "fournisseur", referencedColumnName = "id")
+    @OneToOne
+    private Fournisseur fournisseur;
 
 }

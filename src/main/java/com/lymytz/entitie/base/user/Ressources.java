@@ -5,8 +5,7 @@
  */
 package com.lymytz.entitie.base.user;
 
-import com.lymytz.entitie.base.BaseEntity;
-import com.lymytz.utils.TypeRessource;
+import com.lymytz.entitie.BaseEntity;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.article.com;
+package com.lymytz.entitie.base.article.prix;
 
 import com.lymytz.entitie.BaseEntity;
-import com.lymytz.entitie.base.depot.DepotsEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,28 +27,31 @@ import java.io.Serializable;
  * @author lymytz
  */
 @Entity
-@Table(name = "yvs_base_point_vente_depot")
+@Table(name = "yvs_base_plan_tarifaire_tranche")
 @Getter
 @Setter
-public class PointDeVenteDepot extends BaseEntity implements Serializable {
+public class PlanTarifaireTrancheEntity extends BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_base_point_vente_depot_id_seq", name = "yvs_base_point_vente_depot_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_base_point_vente_depot_id_seq_name", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "yvs_base_plan_tarifaire_tranche_id_seq", name = "yvs_base_plan_tarifaire_tranche_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_base_plan_tarifaire_tranche_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
-    @Column(name = "actif")
-    private Boolean actif = true;
-    @Column(name = "principal")
-    private Boolean principal = false;
-
-    @JoinColumn(name = "point_vente", referencedColumnName = "id")
+    @Column(name = "puv")
+    private Double puv;
+    @Column(name = "valeur_min")
+    private Double valeurMin;
+    @Column(name = "valeur_max")
+    private Double valeurMax;
+    @Column(name = "remise")
+    private Double remise;
+    @Column(name = "base")
+    private String base;
+    @Column(name = "nature_remise")
+    private String natureRemise;
+    @JoinColumn(name = "plan", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private PointDeVenteEntity pointVente;
-    @JoinColumn(name = "depot", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private DepotsEntity depot;
-
+    private PlanTarifaireEntity plan;
 }

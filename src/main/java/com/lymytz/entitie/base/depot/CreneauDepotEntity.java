@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.user;
+package com.lymytz.entitie.base.depot;
 
-import com.lymytz.entitie.base.AgencesEntity;
 import com.lymytz.entitie.BaseEntity;
+import com.lymytz.entitie.base.TrancheHoraireEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -24,34 +24,35 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * @author hp Elite 8300
+ *
+ * @author lymytz
  */
 @Entity
-@Table(name = "yvs_users_agence")
+@Table(name = "yvs_com_creneau_depot")
 @Getter
 @Setter
-public class UsersAgence extends BaseEntity implements Serializable {
+public class CreneauDepotEntity extends BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
+    @SequenceGenerator(sequenceName = "yvs_com_creneau_horaire_id_seq", name = "yvs_com_creneau_horaire_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_com_creneau_horaire_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
-    @SequenceGenerator(sequenceName = "yvs_users_agence_id_seq", name = "yvs_users_agence_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_users_agence_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(name = "actif")
-    private Boolean actif;
-    @Column(name = "can_action")
-    private Boolean canAction;
-    @Column(name = "connecte")
-    private Boolean connecte;
-    @Column(name = "user_systeme")
-    private Boolean userSysteme;
+    private Boolean actif = true;
+    @Column(name = "permanent")
+    private Boolean permanent = false;
 
+   /* @JoinColumn(name = "jour", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "users", referencedColumnName = "id")
-    private UsersEntity users;
+    private YvsJoursOuvres jour;*/
+    @JoinColumn(name = "tranche", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "agence", referencedColumnName = "id")
-    private AgencesEntity agence;
+    private TrancheHoraireEntity tranche;
+    @JoinColumn(name = "depot", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private DepotsEntity depot;
+
 }

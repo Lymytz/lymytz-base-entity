@@ -54,10 +54,10 @@ public class AgencesEntity extends BaseEntityWithSociete implements Serializable
 
     @JoinColumn(name = "societe", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Societe societe;
+    private SocieteEntity societe;
     @JoinColumn(name = "ville", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Dictionnaire ville;
+    private DictionnaireEntity ville;
 
     @Override
     public String toString() {

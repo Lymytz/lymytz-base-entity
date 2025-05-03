@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.article.com;
+package com.lymytz.entitie.base.depot;
 
 import com.lymytz.entitie.BaseEntity;
-import com.lymytz.entitie.base.depot.DepotsEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -20,36 +19,29 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
- *
  * @author lymytz
  */
 @Entity
-@Table(name = "yvs_base_point_vente_depot")
+@Table(name = "yvs_com_liaison_depot")
 @Getter
 @Setter
-public class PointDeVenteDepot extends BaseEntity implements Serializable {
+public class LiaisonDepotEntity extends BaseEntity implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_base_point_vente_depot_id_seq", name = "yvs_base_point_vente_depot_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_base_point_vente_depot_id_seq_name", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "yvs_com_liaison_depot_id_seq", name = "yvs_com_liaison_depot_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_com_liaison_depot_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
-    @Column(name = "actif")
-    private Boolean actif = true;
-    @Column(name = "principal")
-    private Boolean principal = false;
-
-    @JoinColumn(name = "point_vente", referencedColumnName = "id")
+    @Column(name = "transit")
+    private Boolean transit;
+    @JoinColumn(name = "depot_lier", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private PointDeVenteEntity pointVente;
+    private DepotsEntity depotLier;
     @JoinColumn(name = "depot", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private DepotsEntity depot;
-
 }

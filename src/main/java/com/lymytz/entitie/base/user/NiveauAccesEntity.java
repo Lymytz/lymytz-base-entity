@@ -5,8 +5,8 @@
  */
 package com.lymytz.entitie.base.user;
 
-import com.lymytz.entitie.base.AgencesEntity;
 import com.lymytz.entitie.BaseEntity;
+import com.lymytz.entitie.base.SocieteEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -24,34 +24,36 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * @author hp Elite 8300
+ *
+ * @author lymytz
  */
 @Entity
-@Table(name = "yvs_users_agence")
+@Table(name = "yvs_niveau_acces")
 @Getter
 @Setter
-public class UsersAgence extends BaseEntity implements Serializable {
+public class NiveauAccesEntity extends BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
+    @SequenceGenerator(sequenceName = "yvs_groupes_id_seq", name = "yvs_groupes_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_groupes_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
-    @SequenceGenerator(sequenceName = "yvs_users_agence_id_seq", name = "yvs_users_agence_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_users_agence_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column(name = "designation")
+    private String designation;
+    @Column(name = "description")
+    private String description;
     @Column(name = "actif")
-    private Boolean actif;
-    @Column(name = "can_action")
-    private Boolean canAction;
-    @Column(name = "connecte")
-    private Boolean connecte;
-    @Column(name = "user_systeme")
-    private Boolean userSysteme;
+    private Boolean actif = true;
+    @Column(name = "super_admin")
+    private Boolean superAdmin;
 
+    @JoinColumn(name = "grade", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "users", referencedColumnName = "id")
-    private UsersEntity users;
+    private UsersGradeEntity grade;
+    @JoinColumn(name = "societe", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "agence", referencedColumnName = "id")
-    private AgencesEntity agence;
+    private SocieteEntity societe;
+
 }

@@ -1,4 +1,4 @@
-package com.lymytz.entitie.base;
+package com.lymytz.entitie;
 
 import jakarta.persistence.Column;
 import lombok.Getter;

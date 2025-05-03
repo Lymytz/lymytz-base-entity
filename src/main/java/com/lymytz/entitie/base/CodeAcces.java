@@ -5,6 +5,7 @@
  */
 package com.lymytz.entitie.base;
 
+import com.lymytz.entitie.BaseEntityWithSociete;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -29,7 +30,7 @@ import java.io.Serializable;
 @Table(name = "yvs_base_code_acces")
 @Getter
 @Setter
-public class CodeAcces extends BaseEntity implements Serializable {
+public class CodeAcces extends BaseEntityWithSociete implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;

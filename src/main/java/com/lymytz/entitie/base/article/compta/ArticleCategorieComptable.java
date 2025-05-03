@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.article.compta;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.article.Articles;
 import com.lymytz.entitie.base.article.ArticlesTemplate;
 import com.lymytz.entitie.base.compta.CategorieComptable;

@@ -5,8 +5,8 @@
  */
 package com.lymytz.entitie.base.article.com;
 
-import com.lymytz.entitie.base.Agences;
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.base.AgencesEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.Dictionnaire;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -90,7 +90,7 @@ public class PointDeVente extends BaseEntity implements Serializable {
     private Dictionnaire secteur;
     @JoinColumn(name = "agence", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Agences agence;
+    private AgencesEntity agence;
     @JoinColumn(name = "parent", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private PointDeVente parent;

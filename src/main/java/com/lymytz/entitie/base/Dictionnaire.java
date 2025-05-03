@@ -1,5 +1,6 @@
 package com.lymytz.entitie.base;
 
+import com.lymytz.entitie.BaseEntityWithSociete;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,7 +20,7 @@ import java.io.Serializable;
 @Table(name = "yvs_dictionnaire")
 @Getter
 @Setter
-public class Dictionnaire extends BaseEntity implements Serializable {
+public class Dictionnaire extends BaseEntityWithSociete implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yvs_dictionnaire_id_seq")
     @SequenceGenerator(sequenceName = "yvs_dictionnaire_id_seq", allocationSize = 1, name = "yvs_dictionnaire_id_seq")
@@ -34,9 +35,6 @@ public class Dictionnaire extends BaseEntity implements Serializable {
     @Column(name = "actif")
     private Boolean actif;
 
-    @JoinColumn(name = "societe", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Societe societe;
     @JoinColumn(name = "parent", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Dictionnaire parent;

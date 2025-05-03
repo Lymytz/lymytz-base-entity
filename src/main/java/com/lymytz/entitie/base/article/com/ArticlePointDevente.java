@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.article.com;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.article.Articles;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

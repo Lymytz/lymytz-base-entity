@@ -5,8 +5,8 @@
  */
 package com.lymytz.entitie.base.compta;
 
-import com.lymytz.entitie.base.Agences;
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.base.AgencesEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.CodeAcces;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -56,5 +56,5 @@ public class Journaux extends BaseEntity implements Serializable {
     private CodeAcces codeAcces;
     @JoinColumn(name = "agence", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Agences agence;
+    private AgencesEntity agence;
 }

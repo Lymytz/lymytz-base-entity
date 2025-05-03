@@ -6,19 +6,34 @@
 
     <groupId>com.lymytz</groupId>
     <artifactId>lymytz-base-entity</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.4</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>6.6.13.Final</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
             <version>3.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
@@ -54,6 +69,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
+            <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/Lymytz/lymytz-github-repository</url>
         </repository>
     </distributionManagement>

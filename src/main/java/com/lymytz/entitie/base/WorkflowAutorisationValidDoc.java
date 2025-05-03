@@ -5,6 +5,7 @@
  */
 package com.lymytz.entitie.base;
 
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.user.NiveauAcces;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

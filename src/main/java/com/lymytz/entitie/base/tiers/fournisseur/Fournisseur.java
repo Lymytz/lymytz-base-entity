@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.tiers.fournisseur;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.compta.CategorieComptable;
 import com.lymytz.entitie.base.compta.ModelDeReglement;
 import com.lymytz.entitie.base.compta.PlanComptable;
@@ -73,6 +73,6 @@ public class Fournisseur extends BaseEntity implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private ModelDeReglement modelDeReglement;
     @OneToOne(mappedBy = "fournisseur", fetch = FetchType.LAZY)
-    private Fournisseur codeExterne;
+    private ExtFournisseur codeExterne;
 
 }

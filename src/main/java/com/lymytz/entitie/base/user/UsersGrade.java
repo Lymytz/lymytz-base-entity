@@ -5,7 +5,7 @@
  */
 package com.lymytz.entitie.base.user;
 
-import com.lymytz.entitie.base.BaseEntity;
+import com.lymytz.entitie.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

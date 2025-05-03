@@ -1,6 +1,6 @@
 package com.lymytz.entitie;
 
-import com.lymytz.entitie.base.Societe;
+import com.lymytz.entitie.base.SocieteEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -25,5 +25,5 @@ public abstract class BaseEntityWithSociete {
     private LocalDateTime dateUpdate;
     @JoinColumn(name = "societe", referencedColumnName = "id")
     @ManyToOne
-    private Societe societe;
+    private SocieteEntity societe;
 }

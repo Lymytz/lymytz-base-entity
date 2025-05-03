@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.article.com;
+package com.lymytz.entitie.base.tiers.fournisseur;
 
-import com.lymytz.entitie.BaseEntity;
-import com.lymytz.entitie.base.depot.DepotsEntity;
+import com.lymytz.entitie.base.SocieteEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,28 +27,28 @@ import java.io.Serializable;
  * @author lymytz
  */
 @Entity
-@Table(name = "yvs_base_point_vente_depot")
+@Table(name = "yvs_base_categorie_fournisseur")
 @Getter
 @Setter
-public class PointDeVenteDepot extends BaseEntity implements Serializable {
+public class CategorieFournisseurEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_base_point_vente_depot_id_seq", name = "yvs_base_point_vente_depot_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_base_point_vente_depot_id_seq_name", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "yvs_base_categorie_fournisseur_id_seq", name = "yvs_base_categorie_fournisseur_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_base_categorie_fournisseur_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
-    @Column(name = "actif")
-    private Boolean actif = true;
-    @Column(name = "principal")
-    private Boolean principal = false;
-
-    @JoinColumn(name = "point_vente", referencedColumnName = "id")
+    @Column(name = "code")
+    private String code;
+    @Column(name = "libelle")
+    private String libelle;
+    @Column(name = "description")
+    private String description;
+    @JoinColumn(name = "societe", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private PointDeVenteEntity pointVente;
-    @JoinColumn(name = "depot", referencedColumnName = "id")
+    private SocieteEntity societe;
+    @JoinColumn(name = "parent", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private DepotsEntity depot;
-
+    private CategorieFournisseurEntity parent;
 }

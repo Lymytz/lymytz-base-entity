@@ -31,7 +31,7 @@ import java.io.Serializable;
 @Table(name = "yvs_base_point_vente_depot")
 @Getter
 @Setter
-public class PointDeVenteDepot extends BaseEntity implements Serializable {
+public class PointDeVenteDepotEntity extends BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;

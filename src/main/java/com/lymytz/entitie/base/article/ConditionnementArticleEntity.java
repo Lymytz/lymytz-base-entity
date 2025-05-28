@@ -6,6 +6,8 @@
 package com.lymytz.entitie.base.article;
 
 import com.lymytz.entitie.BaseEntity;
+import com.lymytz.entitie.base.article.com.ConditionnementPointDeVenteEntity;
+import com.lymytz.entitie.base.article.compta.ArticleCategorieComptableEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -14,6 +16,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -21,11 +24,11 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 import static com.lymytz.entitie.Constantes.NATURE_MTANT;
 
 /**
- *
  * @author lymytz
  */
 @Entity
@@ -82,6 +85,12 @@ public class ConditionnementArticleEntity extends BaseEntity implements Serializ
     @JoinColumn(name = "unite", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private UniteDeMesureEntity unite;
+
+    @OneToMany(mappedBy = "conditionnement", fetch = FetchType.LAZY)
+    private List<ArticleCodeBarreEntity> articleCodeBarres;
+
+    @OneToMany(mappedBy = "conditionnement", fetch = FetchType.LAZY)
+    private List<ConditionnementPointDeVenteEntity> conditionnementPointDeVentes;
 
 
 }

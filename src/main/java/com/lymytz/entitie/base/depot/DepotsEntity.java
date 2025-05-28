@@ -8,7 +8,7 @@ package com.lymytz.entitie.base.depot;
 import com.lymytz.entitie.base.AgencesEntity;
 import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.CodeAccesEntity;
-import com.lymytz.entitie.base.article.com.PointDeVenteDepot;
+import com.lymytz.entitie.base.article.com.PointDeVenteDepotEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -102,6 +102,6 @@ public class DepotsEntity extends BaseEntity implements Serializable {
     @OneToMany(mappedBy = "depot",fetch = FetchType.LAZY)
     private List<OperationDepotEntity> operations;
     @OneToMany(mappedBy = "depot", fetch = FetchType.LAZY)
-    private List<PointDeVenteDepot> points;
+    private List<PointDeVenteDepotEntity> points;
 
 }

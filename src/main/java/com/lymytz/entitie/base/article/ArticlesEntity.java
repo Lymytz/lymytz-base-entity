@@ -6,6 +6,9 @@
 package com.lymytz.entitie.base.article;
 
 import com.lymytz.entitie.BaseEntity;
+import com.lymytz.entitie.base.article.com.ArticlePointDeventeEntity;
+import com.lymytz.entitie.base.article.compta.ArticleCategorieComptableEntity;
+import com.lymytz.entitie.base.depot.ArticleDepotEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -14,6 +17,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -21,6 +25,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author lymytz
@@ -34,7 +39,7 @@ public class ArticlesEntity extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @SequenceGenerator(sequenceName = "yvs_articles_id_seq", name = "yvs_articles_id_seq_name",allocationSize = 1)
+    @SequenceGenerator(sequenceName = "yvs_articles_id_seq", name = "yvs_articles_id_seq_name", allocationSize = 1)
     @GeneratedValue(generator = "yvs_articles_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
@@ -108,5 +113,11 @@ public class ArticlesEntity extends BaseEntity implements Serializable {
     @JoinColumn(name = "classe2", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {})
     private ClassesStatistiqueEntity classe2;
+
+    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
+    private List<ArticleDepotEntity> articleDepotEntities;
+    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
+    private List<ArticlePointDeventeEntity> articlePointDeventeEntities;
+
 
 }

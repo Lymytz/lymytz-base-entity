@@ -96,7 +96,7 @@ public class PointDeVenteEntity extends BaseEntity implements Serializable {
     private PointDeVenteEntity parent;
 
     @OneToMany(mappedBy = "pointVente", fetch = FetchType.LAZY)
-    private List<PointDeVenteDepot> depots;
+    private List<PointDeVenteDepotEntity> depots;
     @OneToMany(mappedBy = "point", fetch = FetchType.LAZY)
     private List<CreneauPointDeVenteEntity> listTranche; //planification
 

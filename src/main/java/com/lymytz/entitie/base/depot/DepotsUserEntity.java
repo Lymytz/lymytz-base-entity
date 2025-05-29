@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.user;
+package com.lymytz.entitie.base.depot;
 
-import com.lymytz.entitie.base.AgencesEntity;
 import com.lymytz.entitie.BaseEntity;
+import com.lymytz.entitie.base.user.UsersEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,34 +23,28 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
+ *
  * @author hp Elite 8300
  */
 @Entity
-@Table(name = "yvs_users_agence")
+@Table(name = "yvs_base_depots_user")
 @Getter
 @Setter
-public class UsersAgence extends BaseEntity implements Serializable {
+public class DepotsUserEntity extends BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
+    @SequenceGenerator(sequenceName = "yvs_base_depots_user_id_seq", name = "yvs_base_depots_user_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_base_depots_user_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
-    @SequenceGenerator(sequenceName = "yvs_users_agence_id_seq", name = "yvs_users_agence_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_users_agence_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(name = "actif")
     private Boolean actif;
-    @Column(name = "can_action")
-    private Boolean canAction;
-    @Column(name = "connecte")
-    private Boolean connecte;
-    @Column(name = "user_systeme")
-    private Boolean userSysteme;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "users", referencedColumnName = "id")
+    @ManyToOne
     private UsersEntity users;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "agence", referencedColumnName = "id")
-    private AgencesEntity agence;
+    @JoinColumn(name = "depot", referencedColumnName = "id")
+    @ManyToOne
+    private DepotsEntity depot;
 }

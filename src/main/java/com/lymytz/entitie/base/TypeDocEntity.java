@@ -38,5 +38,5 @@ public class TypeDocEntity  extends BaseEntityWithSociete implements Serializabl
     private Boolean canReception;
     @JoinColumn(name = "code_acces", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private CodeAcces codeAcces;
+    private CodeAccesEntity codeAcces;
 }

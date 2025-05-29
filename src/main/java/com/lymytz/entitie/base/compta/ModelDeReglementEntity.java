@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lymytz.entitie.base.user;
+package com.lymytz.entitie.base.compta;
 
-import com.lymytz.entitie.base.AgencesEntity;
 import com.lymytz.entitie.BaseEntity;
+import com.lymytz.entitie.base.CodeAccesEntity;
+import com.lymytz.entitie.base.SocieteEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -24,34 +25,37 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * @author hp Elite 8300
+ *
+ * @author lymytz
  */
 @Entity
-@Table(name = "yvs_users_agence")
+@Table(name = "yvs_base_model_reglement")
 @Getter
 @Setter
-public class UsersAgence extends BaseEntity implements Serializable {
+public class ModelDeReglementEntity extends BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
+    @SequenceGenerator(sequenceName = "yvs_base_model_reglement_id_seq", name = "yvs_base_model_reglement_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "yvs_base_model_reglement_id_seq_name", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
-    @SequenceGenerator(sequenceName = "yvs_users_agence_id_seq", name = "yvs_users_agence_id_seq_name", allocationSize = 1)
-    @GeneratedValue(generator = "yvs_users_agence_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column(name = "description")
+    private String description;
+    @Column(name = "reference")
+    private String reference;
+    @Column(name = "type")
+    private char type;
     @Column(name = "actif")
     private Boolean actif;
-    @Column(name = "can_action")
-    private Boolean canAction;
-    @Column(name = "connecte")
-    private Boolean connecte;
-    @Column(name = "user_systeme")
-    private Boolean userSysteme;
+    @Column(name = "paye_before_valide")
+    private Boolean payeBeforeValide;
+    @JoinColumn(name = "code_acces", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private CodeAccesEntity codeAcces;
+    @JoinColumn(name = "societe", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private SocieteEntity societe;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "users", referencedColumnName = "id")
-    private UsersEntity users;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "agence", referencedColumnName = "id")
-    private AgencesEntity agence;
 }

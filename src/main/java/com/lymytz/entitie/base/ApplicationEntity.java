@@ -16,7 +16,8 @@ public class ApplicationEntity extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(generator = "application_id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "application_id_seq", name = "application_id_seq_name", allocationSize = 1)
+    @GeneratedValue(generator = "application_id_seq_name", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String designation;
     private String description;

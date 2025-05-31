@@ -13,8 +13,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class ApplicationEntity extends BaseEntity implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
     @Id
     @SequenceGenerator(sequenceName = "application_id_seq", name = "application_id_seq_name", allocationSize = 1)
     @GeneratedValue(generator = "application_id_seq_name", strategy = GenerationType.SEQUENCE)

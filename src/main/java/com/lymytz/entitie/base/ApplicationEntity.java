@@ -1,0 +1,24 @@
+package com.lymytz.entitie.base;
+
+import com.lymytz.entitie.BaseEntity;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "application")
+@Getter
+@Setter
+public class ApplicationEntity extends BaseEntity implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(generator = "application_id_seq", strategy = GenerationType.SEQUENCE)
+    private Long id;
+    private String designation;
+    private String description;
+
+}

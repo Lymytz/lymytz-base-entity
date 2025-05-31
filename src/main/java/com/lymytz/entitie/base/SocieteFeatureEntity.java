@@ -22,4 +22,5 @@ public class SocieteFeatureEntity extends BaseEntity implements Serializable {
     @MapsId("featureId")
     @JoinColumn(name = "feature_id")
     private ApplicationFeatureEntity feature;
+    private boolean enabled;
 }

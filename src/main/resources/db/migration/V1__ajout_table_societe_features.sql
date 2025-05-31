@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS societe_features (
                                                 feature_id INT NOT NULL,
                                                 date_save TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                                 date_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                                enabled BOOLEAN DEFAULT TRUE,
                                                 FOREIGN KEY (societe_id) REFERENCES yvs_societes(id) ON DELETE CASCADE,
     FOREIGN KEY (feature_id) REFERENCES application_features(id) ON DELETE CASCADE,
     PRIMARY KEY (societe_id, feature_id)

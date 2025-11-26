@@ -8,6 +8,7 @@ package com.lymytz.entitie.base.tiers;
 import com.lymytz.entitie.BaseEntity;
 import com.lymytz.entitie.base.SocieteEntity;
 import com.lymytz.entitie.base.compta.ModelDeReglementEntity;
+import com.lymytz.entitie.base.tiers.client.CategorieTarifaireEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -16,6 +17,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -23,6 +25,7 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -62,6 +65,10 @@ public class CategorieClientEntity extends BaseEntity implements Serializable {
     @JoinColumn(name = "model", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private ModelDeReglementEntity modelDeReglement;
+
+    @OneToMany(mappedBy = "categorie", fetch = FetchType.LAZY)
+    private List<CategorieTarifaireEntity> tarifaires;
+
 /*    @OneToMany(mappedBy = "categorie")
     private List<PlanReglementCategorie> plans;
     @OneToMany(mappedBy = "categorie")

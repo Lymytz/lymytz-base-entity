@@ -26,3 +26,9 @@ CREATE TABLE IF NOT EXISTS societe_features (
     FOREIGN KEY (feature_id) REFERENCES application_features(id) ON DELETE CASCADE,
     PRIMARY KEY (societe_id, feature_id)
     );
+
+ALTER TABLE public.yvs_users ADD keycloack_id varchar(255) NULL;
+ALTER TABLE public.yvs_users ALTER COLUMN keycloack_id SET STORAGE EXTENDED;
+
+ALTER TABLE public.yvs_societes ADD realm_name varchar(255) NULL;
+ALTER TABLE public.yvs_societes ALTER COLUMN realm_name SET STORAGE EXTENDED;

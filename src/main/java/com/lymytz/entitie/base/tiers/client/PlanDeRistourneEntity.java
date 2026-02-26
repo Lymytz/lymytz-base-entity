@@ -15,12 +15,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -45,4 +47,7 @@ public class PlanDeRistourneEntity extends BaseEntity implements Serializable {
     @JoinColumn(name = "societe", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private SocieteEntity societe;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "planRistourne")
+    private List<ClientsEntity> clients;
     }

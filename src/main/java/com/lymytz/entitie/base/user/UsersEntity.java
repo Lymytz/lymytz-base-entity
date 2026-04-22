@@ -42,42 +42,46 @@ public class UsersEntity extends BaseEntity implements Serializable {
     private Long id;
     @Column(name = "code_users")
     private String codeUsers;
-    @Column(name = "password_user")
-    private String passwordUser;
     @Column(name = "photo")
     private String photo;
     @Column(name = "civilite")
     private String civilite;
-    @Column(name = "abbreviation")
-    private String abbreviation;
-    @Column(name = "vente_online")
-    private Boolean venteOnline = false;
     @Column(name = "actif")
     private Boolean actif = true;
-    @Column(name = "acces_multi_agence")
-    private Boolean accesMultiAgence = true;
-    @Column(name = "acces_multi_societe")
-    private Boolean accesMultiSociete = false;
     @Column(name = "connect_online_planning")
     private Boolean connectOnlinePlanning = false;
-    @Column(name = "alea_mdp")
-    private String aleaMdp;
-    @Column(name = "connecte")
-    private Boolean connecte = false;
     @Column(name = "nom_users")
     private String nomUsers;
+    @Column(name = "prenom")
+    private String prenom;
+    @Column(name = "keycloack_id")
     private String keycloackId;
-    @Column(name = "super_admin")
-    private Boolean superAdmin = false;
+    @Column(name = "phone_number")
+    private String phoneNumber;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "blocked")
+    private Boolean blocked;
+    @Column(name = "email_verified")
+    private Boolean emailVerified;
+    @Column(name = "phone_number_verified")
+    private Boolean phoneNumberVerified;
+    @Column(name = "only_connect_with_planing")
+    private Boolean onlyConnectWithPlaning;
+    @Column(name = "request_password_reset")
+    private Boolean requestPasswordReset;
+
+    //préférence de l'utilisateur
+    @Column(name = "langue")
+    private String langue;
+    @Column(name = "theme_color")
+    private String themeColor;
+    @Column(name = "fuseau_horaire")
+    private String fuseauHoraire;
 
     @JoinColumn(name = "agence", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private AgencesEntity agence;
-    @JoinColumn(name = "author", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private UsersAgence author;
-    @OneToOne(mappedBy = "users", fetch = FetchType.LAZY)
-    private UsersValiditeEntity validite;
 
     /*@JoinColumn(name = "plan_commission", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)

@@ -46,8 +46,5 @@ public class UsersValiditeEntity extends BaseEntity implements Serializable {
     @JoinColumn(name = "users", referencedColumnName = "id")
     @OneToOne(fetch = FetchType.LAZY)
     private UsersEntity users;
-    @JoinColumn(name = "author", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private UsersAgence author;
 
 }
